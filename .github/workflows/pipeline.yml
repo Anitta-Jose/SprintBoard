@@ -62,4 +62,4 @@ jobs:
       - name: Push Docker Images to Docker Hub
         run: |
           docker push anittajose/sprint-board:client-${{github.run_number}}
-          docker anittajose/sprint-board:server-${{github.run_number}}
+          docker push anittajose/sprint-board:server-${{github.run_number}}
