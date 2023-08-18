@@ -27,6 +27,7 @@ jobs:
         working-directory: ./client
         run: |
           npm install
+          export REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
 
       # Install dependencies, export environment variables to be used by application and run tests for the server application
       - name: Install and Test Server
