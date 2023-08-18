@@ -14,6 +14,7 @@ services:
     image: anittajose/sprint-board:client-latest
     environment:
       - CHOKIDAR_USEPOLLING=true
+      - REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
 
   server:
     image: anittajose/sprint-board:server-latest
