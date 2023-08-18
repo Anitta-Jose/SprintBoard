@@ -70,6 +70,7 @@ jobs:
         run: |
           docker push anittajose/sprint-board:client-${{github.run_number}}
           docker push anittajose/sprint-board:server-${{github.run_number}}
+          docker push anittajose/sprint-board:nginx-${{github.run_number}}
 
       # This is the step that is deploying the application to Elastic Beanstalk.
       - name: Deploy to Elastic Beanstalk
