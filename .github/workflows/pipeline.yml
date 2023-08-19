@@ -76,7 +76,7 @@ jobs:
           docker push anittajose/sprint-board:server-latest
           docker push anittajose/sprint-board:nginx-latest
 
-      # This is the step that is deploying the application to Elastic Beanstalk.
+      # This is the step that is used in deploying the application to Elastic Beanstalk.
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
         with:
