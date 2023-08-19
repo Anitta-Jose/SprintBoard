@@ -4,7 +4,7 @@ const todoItemsModel = require('../models/todoItems');
 
 
 //create first route --add Todo Item to database
-router.post('/server/item', async (req, res)=>{
+router.post('/item', async (req, res)=>{
   try{
     const newItem = new todoItemsModel({
       item: req.body.item,
@@ -19,9 +19,11 @@ router.post('/server/item', async (req, res)=>{
 })
 
 //create second route -- get data from database
-router.get('/server/items', async (req, res)=>{
+router.get('/items', async (req, res)=>{
   try{
+    console.log("Inside router")
     const allTodoItems = await todoItemsModel.find({});
+    console.log('allTodoItems',allTodoItems)
     res.status(200).json(allTodoItems)
   }catch(err){
     res.json(err);
