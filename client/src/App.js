@@ -10,7 +10,6 @@ function App() {
   //add new todo item to database
   const addItem = async (e) => {
     e.preventDefault();
-   console.log('process.env.REACT_APP_BACKEND_URL',process.env.REACT_APP_BACKEND_URL)
     try{
       const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/item`, {item: e.target.item.value, assignee:e.target.assignee.value})
       setListItems(prev => [...prev, res.data]);
@@ -25,6 +24,7 @@ function App() {
   useEffect(()=>{
     const getItemsList = async () => {
       try{
+        console.log('process.env.REACT_APP_BACKEND_URL',process.env.REACT_APP_BACKEND_URL)
         const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/items`)
         setListItems(res.data);
         console.log('render')
