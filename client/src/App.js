@@ -29,7 +29,7 @@ function App() {
         setListItems(res.data);
         console.log('render')
       }catch(err){
-        console.log(err);
+        console.log("Heloooo  inside app.js error");
       }
     }
     getItemsList()
