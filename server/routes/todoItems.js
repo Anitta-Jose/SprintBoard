@@ -1,10 +1,11 @@
 const router = require('express').Router();
 //import todo model 
 const todoItemsModel = require('../models/todoItems');
+const auth = require("../middleware/auth");
 
 
 //create first route --add Todo Item to database
-router.post('/item', async (req, res)=>{
+router.post('/item', auth, async (req, res)=>{
   try{
     const newItem = new todoItemsModel({
       item: req.body.item,
@@ -19,7 +20,7 @@ router.post('/item', async (req, res)=>{
 })
 
 //create second route -- get data from database
-router.get('/items', async (req, res)=>{
+router.get('/items', auth, async (req, res)=>{
   try{
     console.log("Inside router")
     const allTodoItems = await todoItemsModel.find({});
@@ -44,7 +45,7 @@ router.put('/item/:id', async (req, res)=>{
 
 
 //Delete item from database
-router.delete('/item/:id', async (req, res)=>{
+router.delete('/item/:id', auth, async (req, res)=>{
   try{
     //find the item by its id and delete it
     const deleteItem = await todoItemsModel.findByIdAndDelete(req.params.id);
