@@ -12,7 +12,7 @@ const Login = () => {
     event.preventDefault();
     const { email, password } = event.target;
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/auth/login`,
+      `${process.env.REACT_APP_BACKEND_URL}/login`,
       {
         method: "POST",
         headers: {

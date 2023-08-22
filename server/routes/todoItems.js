@@ -23,7 +23,7 @@ router.post('/item', async (req, res)=>{
   }
 })
 
-router.post('/auth/login', async (req, res)=>{
+router.post('/login', async (req, res)=>{
  console.log('Inside route')
  const { email, password } = req.body;
  if (email === EMAIL && password === PASSWORD) {
@@ -47,7 +47,7 @@ return res.status(401).json({
 })
 
 //create second route -- get data from database
-router.get('/api/items', async (req, res)=>{
+router.get('/items', async (req, res)=>{
   try{
     console.log("Inside router")
     const allTodoItems = await todoItemsModel.find({});
