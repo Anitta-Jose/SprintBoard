@@ -27,7 +27,7 @@ function App() {
         const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/items`)
         setListItems(res.data);
       }catch(err){
-        console.log("err");
+       
       }
     }
     getItemsList()
@@ -40,7 +40,6 @@ function App() {
       const newListItems = listItems.filter(item=> item._id !== id);
       setListItems(newListItems);
     }catch(err){
-      console.log(err);
     }
   }
 
