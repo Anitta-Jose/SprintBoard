@@ -47,7 +47,7 @@ return res.status(401).json({
 })
 
 //create second route -- get data from database
-router.get('/items', async (req, res)=>{
+router.get('/api/items', async (req, res)=>{
   try{
     console.log("Inside router")
     const allTodoItems = await todoItemsModel.find({});
