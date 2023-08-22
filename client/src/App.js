@@ -16,7 +16,7 @@ function App() {
       setItemText('');
       setItemAssignee('');
     }catch(err){
-      console.log(err);
+      
     }
   }
 
