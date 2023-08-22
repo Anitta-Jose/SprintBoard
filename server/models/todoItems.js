@@ -12,6 +12,6 @@ const TodoItemSchema = new mongoose.Schema({
     required: true,
   },
 })
-console.log('Inside models')
+
 //export this Schema
 module.exports = mongoose.model('todo', TodoItemSchema);

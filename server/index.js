@@ -14,7 +14,6 @@ app.use(cors());
 
 //import routes
 const TodoItemRoute = require('./routes/todoItems');
-const AuthRouter = require("./routes/auth.routes");
 
 
 //connect to mongodb ..
@@ -24,7 +23,6 @@ mongoose.connect(process.env.DB_CONNECT)
 
 
 app.use('/', TodoItemRoute);
-app.use("/api/auth", AuthRouter);
 
 
 

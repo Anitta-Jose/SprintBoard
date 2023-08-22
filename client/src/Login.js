@@ -11,7 +11,6 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password } = event.target;
-console.log('Inside login click')
     const response = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/auth/login`,
       {
@@ -27,7 +26,7 @@ console.log('Inside login click')
     );
 
     const data = await response.json();
-    console.log('data obtained in response',data)
+    console.log('data obtained in response',data.token)
     localStorage.setItem("token", data.token);
     window.location.reload();
   };

@@ -5,12 +5,12 @@ import App from './App';
 import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 
-const token = localStorage?.getItem("token");
 
+const token = localStorage?.getItem("token");
 
 ReactDOM.render(
   <React.StrictMode>
-   {token ? <App /> : <Login />}
+   {token && token!=="undefined"? <App /> : <Login />}
   </React.StrictMode>,
   document.getElementById('root')
 );
