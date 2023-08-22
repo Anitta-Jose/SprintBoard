@@ -4,7 +4,7 @@ import App from './App';
 
 describe("App", () => {
 
-  it("Render Sprint board elements on screen", () => {
+  it("Render Sprint board elements on screen", async() => {
      render(<App />);
      const heading = screen.getByText(/Sprint Board/i);
      expect(heading).toBeInTheDocument();
