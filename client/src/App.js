@@ -11,7 +11,7 @@ function App() {
   const addItem = async (e) => {
     e.preventDefault();
     try{
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/item`, {item: e.target.item.value, assignee:e.target.assignee.value})
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/item`, {item: e.target.item?.value, assignee:e.target.assignee?.value})
       setListItems(prev => [...prev, res.data]);
       setItemText('');
       setItemAssignee('');
