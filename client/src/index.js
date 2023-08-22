@@ -6,11 +6,11 @@ import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 
 
-const token = localStorage?.getItem("token");
+//const token = localStorage?.getItem("token");
 
 ReactDOM.render(
   <React.StrictMode>
-   {token && token!=="undefined"? <App /> : <Login />}
+   {<App /> }
   </React.StrictMode>,
   document.getElementById('root')
 );
