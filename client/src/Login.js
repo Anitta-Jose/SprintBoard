@@ -13,7 +13,7 @@ const Login = () => {
     const { email, password } = event.target;
 console.log('Inside login click')
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/auth/login`,
+      `${process.env.REACT_APP_BACKEND_URL}/login`,
       {
         method: "POST",
         headers: {

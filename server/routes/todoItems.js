@@ -1,6 +1,11 @@
+const jwt = require("jsonwebtoken");
 const router = require('express').Router();
 //import todo model 
 const todoItemsModel = require('../models/todoItems');
+require("dotenv").config();
+
+const EMAIL = process.env.EMAIL;
+const PASSWORD = process.env.PASSWORD;
 
 
 //create first route --add Todo Item to database
@@ -16,6 +21,29 @@ router.post('/item', async (req, res)=>{
   }catch(err){
     res.json(err);
   }
+})
+
+router.post('/login', async (req, res)=>{
+ console.log('Inside route')
+ const { email, password } = req.body;
+ if (email === EMAIL && password === PASSWORD) {
+  /* Creating a token. */
+  console.log('Verified the details')
+  const token = jwt.sign({ email }, process.env.TOKEN_KEY, {
+    expiresIn: "2h",
+  });
+  console.log('token',token)
+  return res.status(200).json({
+    statusCode: 200,
+    msg: "Login successful",
+    token,
+  });
+}
+return res.status(401).json({
+  statusCode: 401,
+  msg: "Invalid Credentials",
+});
+ 
 })
 
 //create second route -- get data from database
