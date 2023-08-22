@@ -3,7 +3,6 @@ import axios from 'axios';
 import './App.css';
 
 function App() {
-  const token = localStorage.getItem("token");
   const [itemText, setItemText] = useState('');
   const [itemAssignee, setItemAssignee] = useState('');
   const [listItems, setListItems] = useState([]);
@@ -25,8 +24,10 @@ function App() {
   useEffect(()=>{
     const getItemsList = async () => {
       try{
+        console.log('process.env.REACT_APP_BACKEND_URL',process.env.REACT_APP_BACKEND_URL)
         const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/items`)
         setListItems(res.data);
+        console.log('render')
       }catch(err){
         console.log("Heloooo  inside app.js error");
       }
