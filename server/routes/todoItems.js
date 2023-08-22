@@ -24,15 +24,12 @@ router.post('/item', async (req, res)=>{
 })
 
 router.post('/login', async (req, res)=>{
- console.log('Inside route')
  const { email, password } = req.body;
  if (email === EMAIL && password === PASSWORD) {
   /* Creating a token. */
-  console.log('Verified the details')
   const token = jwt.sign({ email }, process.env.TOKEN_KEY, {
     expiresIn: "2h",
   });
-  console.log('token',token)
   return res.status(200).json({
     statusCode: 200,
     msg: "Login successful",
@@ -49,9 +46,7 @@ return res.status(401).json({
 //create second route -- get data from database
 router.get('/items', async (req, res)=>{
   try{
-    console.log("Inside router")
     const allTodoItems = await todoItemsModel.find({});
-    console.log('allTodoItems',allTodoItems)
     res.status(200).json(allTodoItems)
   }catch(err){
     res.json(err);

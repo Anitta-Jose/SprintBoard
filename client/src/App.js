@@ -24,12 +24,10 @@ function App() {
   useEffect(()=>{
     const getItemsList = async () => {
       try{
-        console.log('process.env.REACT_APP_BACKEND_URL',process.env.REACT_APP_BACKEND_URL)
         const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/items`)
         setListItems(res.data);
-        console.log('render')
       }catch(err){
-        console.log("Heloooo  inside app.js error");
+        console.log("err");
       }
     }
     getItemsList()

@@ -11,9 +11,6 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password } = event.target;
-console.log('Inside login click')
-console.log('process.env.REACT_APP_BACKEND_URL',process.env.REACT_APP_BACKEND_URL)
-console.log('process.env.EMAIL',process.env.EMAIL)
     const response = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/login`,
       {
@@ -30,9 +27,6 @@ console.log('process.env.EMAIL',process.env.EMAIL)
 
     const data = await response.json();
     localStorage.setItem("token", data.token);
-    console.log('data obtained in response',data.token)
-    const token = localStorage?.getItem("token");
-    console.log('token set',token)
     window.location.reload();
   };
 
