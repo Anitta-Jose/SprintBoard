@@ -24,5 +24,6 @@ describe("App", () => {
      userEvent.type(assignee, 'Ankit');
      const addButton = screen.getByRole("button", { name: /add to board/i });
      userEvent.click(addButton);
+     await waitFor(()=>{});
   });
 });
