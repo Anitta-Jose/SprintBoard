@@ -11,6 +11,9 @@ on:
 env:
   DB_CONNECT: ${{ secrets.DB_CONNECT }}
   PORT: ${{ secrets.PORT }}
+  TOKEN_KEY: ${{ secrets.TOKEN_KEY }}
+  EMAIL: ${{ secrets.EMAIL }}
+  PASSWORD: ${{ secrets.PASSWORD }}
 
 # This is the workflow that is being run.
 jobs:
@@ -36,6 +39,9 @@ jobs:
           npm install
           export PORT=$PORT
           export DB_CONNECT=$DB_CONNECT
+          export TOKEN_KEY=$TOKEN_KEY
+          export EMAIL=$EMAIL
+          export PASSWORD=$PASSWORD
 
       # Build a Docker image for the client application
       - name: Build Client Docker Image

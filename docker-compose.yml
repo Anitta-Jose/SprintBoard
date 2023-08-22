@@ -21,3 +21,7 @@ services:
     environment:
       - PORT=${PORT}
       - DB_CONNECT=${DB_CONNECT}
+      - TOKEN_KEY=${TOKEN_KEY}
+      - EMAIL=${EMAIL}
+      - PASSWORD=${PASSWORD}
+      
