@@ -6,6 +6,7 @@ import Login from './Login';
 import reportWebVitals from './reportWebVitals';
 
 const token = localStorage?.getItem("token");
+console.log('token in index js',token)
 
 ReactDOM.render(
   <React.StrictMode>

@@ -33,6 +33,7 @@ console.log('process.env.EMAIL',process.env.EMAIL)
     console.log('data obtained in response',data.token)
     const token = localStorage?.getItem("token");
     console.log('token set',token)
+    window.location.reload();
   };
 
   return (
