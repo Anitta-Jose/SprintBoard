@@ -12,6 +12,7 @@ const Login = () => {
     event.preventDefault();
     const { email, password } = event.target;
 console.log('Inside login click')
+console.log('process.env.REACT_APP_BACKEND_URL',process.env.REACT_APP_BACKEND_URL)
     const response = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/login`,
       {
@@ -29,7 +30,6 @@ console.log('Inside login click')
     const data = await response.json();
     console.log('data obtained in response',data)
     localStorage.setItem("token", data.token);
-    window.location.reload();
   };
 
   return (
