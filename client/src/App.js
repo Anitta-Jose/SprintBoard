@@ -42,10 +42,18 @@ function App() {
     }catch(err){
     }
   }
+  const logoutClicked = () => {
+    localStorage.clear();
+    window.location.reload();
+  }
 
   return (
     <div className="App">
-      <div className="todo-heading">Sprint Board</div>
+      <div className="todo-heading">
+        <div className="heading">Sprint Board</div>
+        <div className="logout" onClick={logoutClicked}>Logout</div>
+        </div>
+      
       <form className="form" onSubmit={e => addItem(e)}>
         <input type="text" id="item" name="item" placeholder='Enter Ticket Description' aria-label="ticket description" onChange={e => {setItemText(e.target.value)} } value={itemText} />
         <input type="text" id="assignee" name="assignee" placeholder=' Enter Assignee' aria-label="assignee" onChange={e => {setItemAssignee(e.target.value)} } value={itemAssignee} />
