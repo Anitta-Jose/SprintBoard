@@ -25,7 +25,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Install dependencies and run tests for the client application
+      # Install dependencies and run tests for the client application.
       - name: Install and Test Client
         working-directory: ./client
         run: |
